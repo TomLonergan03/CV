@@ -165,11 +165,11 @@
   \textbf{\Huge Tom Lonergan \vspace{2pt}} & % row = 1, col = 1
   Location: Edinburgh, Scotland \\ % row = 1, col = 2
 %  \href{https://jane-doe.com}{\uline{jane-doe.com}} $|$ % row = 2, col = 1
-  \href{https://www.linkedin.com/in/tomlonergan03/}{\uline{LinkedIn}} $|$ % row = 2, col = 1
-  \href{https://github.com/TomLonergan03}{\uline{GitHub}} %$|$ % row = 2, col = 1
+  \uline{LinkedIn/tomlonergan03} $|$ % row = 2, col = 1
+  \uline{GitHub/TomLonergan03} %$|$ % row = 2, col = 1
 %  \href{https://leetcode.com/jane-doe}{\uline{Leetcode}} & % row = 2, col = 1
 &
-  Email: \href{mailto:tomlonergan91@gmail.com}{\uline{tomlonergan91@gmail.com}} $|$ % row = 2, col = 2
+  Email: \uline{tomlonergan91@gmail.com} $|$ % row = 2, col = 2
   Mobile: +44 7535 870562 \\ % row = 2, col = 2
 \end{tabular*}
 %--------------------------------------------
@@ -178,10 +178,10 @@
 %-----------SUMMARY--------------------------
 % Keep this short, simple and straigth to point
 
-%\section{Full Stack Developer}
-%\small{
+% \section{Full Stack Developer}
+% \small{
 %  I am a highly skilled web developer with over \textbf{3 years of experience} in \textbf{HTML, CSS, JavaScript, and PHP}. I have knowledge of popular frameworks such as \textbf{React, Angular, and Vue.js} and experience with REST APIs and MVC frameworks.
-%}
+% }
 %--------------------------------------------
 
 
@@ -190,11 +190,9 @@
 
 \section{Technical Skills}
   \resumeHeadingListStart{}
-    \resumeSectionType{C++}{:}{2 years experience working on a large shared codebase}
-    \resumeSectionType{Python}{:}{2 years experience with university courses}
-    \resumeSectionType{Rust}{:}{Used for personal projects}
-    \resumeSectionType{Linux}{:}{A year of daily driving various Linux distros, mainly Arch, as well as Ubuntu, Debian, and Kali}
-    \resumeSectionType{Also used}{:}{Java, C, x86 assembly, Bash, Haskell, LaTeX, JSON}
+    \resumeSectionType{Languages}{:}{C++, Rust, Python, C}
+    \resumeSectionType{Linux}{:}{Several years of experience using a range of Linux distros}
+    \resumeSectionType{Also used}{:}{Java, x86 assembly, Bash, Haskell, LaTeX, JSON}
     \resumeSectionType{Dev Tools}{:}{Git, GitHub, CMake, VSCode, IntelliJ}
   \resumeHeadingListEnd{}
 %--------------------------------------------
@@ -205,7 +203,20 @@
 
 \section{Experience}
 \resumeHeadingListStart{}
-  \resumeQuadHeading{Software Project Manager}{Sept 2021 -- Present}
+  \resumeQuadHeading{Intern Software Engineer}{June 2023 -- Sept 2023}
+  {Nutanix}{Cambridge, England}
+    \resumeItemListStart{}
+      \resumeItem{}
+    \resumeItemListEnd
+  \resumeQuadHeading{Head of Software}{July 2023 -- Present}
+  {HYPED - Edinburgh University Hyperloop Team}{Edinburgh, Scotland}
+    \resumeItemListStart{}
+      \resumeItem{Led a team of 25 people to design and implement a distributed control system for a Hyperloop prototype}
+      % \resumeItem{Worked closely with leaders across the organisation to ensure maximum productivity and integration}
+      \resumeItem{Significantly improved developer experience for the team, including a server for cross compilation and a tool for deploying binaries across a distributed system}
+      \resumeItem{Set standards and oversaw code reviews to maintain code quality}
+    \resumeItemListEnd{}  
+  \resumeQuadHeading{Software Project Manager}{Sept 2021 -- July 2023}
   {HYPED - Edinburgh University Hyperloop Team}{Edinburgh, Scotland}
     \resumeItemListStart{}
       \resumeItem{Managed a team of 3-5 people to design, implement, test, and maintain C++ code}
@@ -224,12 +235,13 @@
     \resumeQuadHeading{University of Edinburgh}{Edinburgh, Scotland}
     {Bachelor of Science in Computer Science}{Sept 2021 -- June 2025}
       \resumeItemListStart{}
+        \resumeItem{Studies include algorithms, computer systems, networking, and distributed systems}
         \resumeItem{Predicted First}
       \resumeItemListEnd{}
     \resumeQuadHeading{Bell Baxter High School}{Cupar, Scotland}
     {High School Diploma}{August 2015 -- May 2021}
         \resumeItemListStart{}
-            \resumeItem{AAAAAA at Highers, including Maths Computer Science and Physics}
+            \resumeItem{AAAAAA at Highers, including Maths, Computer Science, and Physics}
             \resumeItem{A at Advanced Higher Statistics}
         \resumeItemListEnd{}
   \resumeHeadingListEnd{}
@@ -245,7 +257,12 @@
       \resumeItemListStart{}
         \resumeItem{Designed a custom 16 bit instruction set}
         \resumeItem{Implemented a simulator for that instruction set in Rust}
-        \resumeItem{Created documentation covering key aspects of the ISA}
+        % \resumeItem{Created documentation covering key aspects of the ISA}
+      \resumeItemListEnd{}
+    \resumeTrioHeading{Web Scraper}{Python, AWS Lambda, DynamoDB}{\href{https://github.com/TomLonergan03/rental-bot}{\uline{Source Code}}}
+      \resumeItemListStart{}
+        \resumeItem{Implemented a web scraper to assist with my search for a rental flat in Edinburgh, and successfully found one}
+        \resumeItem{Used AWS Lambda for hosting the scraper, backing with a DynamoDB store for past applications}
       \resumeItemListEnd{}
   \resumeHeadingListEnd{}
 % --------------------------------------------
@@ -254,10 +271,9 @@
 %----------------OTHERS----------------------
 % You can add your acheivements, accolades, certifications etc. here.
 
-\section{Other Interests}
-  \resumeItemListStart{}
-    \resumeItem{\textbf{Cyber security} - Placed 6th in pwnEd4 CtF qualifiers, preparing for finals in April}
-  \resumeItemListEnd{}
+% \section{Other Interests}
+%   \resumeItemListStart{}
+%   \resumeItemListEnd{}
 %--------------------------------------------
 
 \end{document}
