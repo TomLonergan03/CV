@@ -112,7 +112,7 @@
 % resumeSectionType renders a bolded type to be used under a section, used as skill type here, middle element is used to keep ":"s in the same vertical line
 \newcommand{\resumeSectionType}[3]{
   \item\begin{tabular*}{0.96\textwidth}[t]{
-    p{0.15\linewidth}p{0.02\linewidth}p{0.81\linewidth}
+    p{0.12\linewidth}p{0.02\linewidth}p{0.84\linewidth}
   }
     \textbf{#1} & #2 & #3
   \end{tabular*}\vspace{-2pt}
@@ -165,8 +165,8 @@
   \textbf{\Huge Tom Lonergan \vspace{2pt}} & % row = 1, col = 1
   Location: Edinburgh, Scotland \\ % row = 1, col = 2
 %  \href{https://jane-doe.com}{\uline{jane-doe.com}} $|$ % row = 2, col = 1
-  \uline{LinkedIn/tomlonergan03} $|$ % row = 2, col = 1
-  \uline{GitHub/TomLonergan03} %$|$ % row = 2, col = 1
+  \uline{\href{https://www.linkedin.com/in/tomlonergan03/}{LinkedIn/tomlonergan03}} $|$ % row = 2, col = 1
+  \uline{\href{https://github.com/TomLonergan03}{GitHub/TomLonergan03}} %$|$ % row = 2, col = 1
 %  \href{https://leetcode.com/jane-doe}{\uline{Leetcode}} & % row = 2, col = 1
 &
   Email: \uline{tomlonergan91@gmail.com} $|$ % row = 2, col = 2
@@ -203,23 +203,24 @@
 
 \section{Experience}
 \resumeHeadingListStart{}
-  \resumeQuadHeading{Intern Software Engineer}{June 2023 --- Sept 2023}
+  \resumeQuadHeading{Intern Software Engineer}{June 2023 -- Sept 2023}
   {Nutanix}{Cambridge, England}
     \resumeItemListStart{}
-      \resumeItem{}
+      \resumeItem{Worked in the datapath team to replace the library used for backing VM storage}
+      \resumeItem{Developed knowledge of a QEMU and KVM based virtualisation stack}
     \resumeItemListEnd{}
-  \resumeQuadHeading{Head of Software}{July 2023 --- Present}
+  \resumeQuadHeading{Head of Software}{July 2023 -- Present}
   {HYPED --- Edinburgh University Hyperloop Team}{Edinburgh, Scotland}
     \resumeItemListStart{}
       \resumeItem{Led a team of 25 people to design and implement a distributed control system for a Hyperloop prototype}
-      % \resumeItem{Worked closely with leaders across the organisation to ensure maximum productivity and integration}
-      \resumeItem{Significantly improved developer experience for the team, including a server for cross compilation and a tool for deploying binaries across a distributed system}
+      \resumeItem{Worked closely with leaders across the organisation to ensure maximum productivity and integration}
+      % \resumeItem{Significantly improved developer experience for the team, including a server for cross compilation and a tool for deploying binaries across a distributed system}
       \resumeItem{Set standards and oversaw code reviews to maintain code quality}
     \resumeItemListEnd{}  
-  \resumeQuadHeading{Software Project Manager}{Sept 2021 --- July 2023}
+  \resumeQuadHeading{Software Project Manager}{Sept 2021 -- July 2023}
   {HYPED --- Edinburgh University Hyperloop Team}{Edinburgh, Scotland}
     \resumeItemListStart{}
-      \resumeItem{Managed a team of 3-5 people to design, implement, test, and maintain C++ code}
+      \resumeItem{Managed a team of 3 -- 5 people to design, implement, test, and maintain C++ code}
       \resumeItem{Responsible for controlling logic and communication with motor controllers for Linear Induction Motors}
       \resumeItem{Collaborated with a multidisciplinary organisation to integrate software and hardware}
     \resumeItemListEnd{}
@@ -232,14 +233,14 @@
 
 \section{Education}
   \resumeHeadingListStart{}
-    \resumeQuadHeading{University of Edinburgh}{Edinburgh, Scotland}
-    {Bachelor of Science in Computer Science}{Sept 2021 --- June 2025}
+    \resumeQuadHeading{University of Edinburgh}{Sept 2021 -- June 2025}
+    {Bachelor of Science in Computer Science}{Edinburgh, Scotland}
       \resumeItemListStart{}
-        \resumeItem{Studies include algorithms, computer systems, networking, and distributed systems}
+        \resumeItem{Focusses include algorithms, computer systems, networking, and distributed systems}
         \resumeItem{Predicted First}
       \resumeItemListEnd{}
-    \resumeQuadHeading{Bell Baxter High School}{Cupar, Scotland}
-    {High School Diploma}{August 2015 --- May 2021}
+    \resumeQuadHeading{Bell Baxter High School}{August 2015 -- May 2021}
+    {High School Diploma}{Cupar, Scotland}
         \resumeItemListStart{}
             \resumeItem{AAAAAA at Highers, including Maths, Computer Science, and Physics}
             \resumeItem{A at Advanced Higher Statistics}
@@ -253,15 +254,16 @@
 
 \section{Projects}
   \resumeHeadingListStart{}
-    \resumeTrioHeading{Instruction Set Architecture Simulator}{Rust, Assembly design, Git}{\href{https://github.com/TomLonergan03/isa}{\uline{Source Code}}}
+    \resumeQuadHeading{Instruction Set Architecture Simulator}{}
+    {Rust, Assembly design, Git}{\href{https://github.com/TomLonergan03/isa}{\uline{Source Code}}}
       \resumeItemListStart{}
         \resumeItem{Designed a custom 16 bit instruction set}
         \resumeItem{Implemented a simulator for that instruction set in Rust}
         % \resumeItem{Created documentation covering key aspects of the ISA}
       \resumeItemListEnd{}
-    \resumeTrioHeading{Web Scraper}{Python, AWS Lambda, DynamoDB}{\href{https://github.com/TomLonergan03/rental-bot}{\uline{Source Code}}}
+    \resumeQuadHeading{Web Scraper}{}{Python, AWS Lambda, DynamoDB}{\href{https://github.com/TomLonergan03/rental-bot}{\uline{Source Code}}}
       \resumeItemListStart{}
-        \resumeItem{Implemented a web scraper to assist with my search for a rental flat in Edinburgh, and successfully found one}
+        \resumeItem{Implemented a web scraper to assist with my search for a rental flat in Edinburgh}
         \resumeItem{Used AWS Lambda for hosting the scraper, backing with a DynamoDB store for past applications}
       \resumeItemListEnd{}
   \resumeHeadingListEnd{}
