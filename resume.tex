@@ -1,279 +1,186 @@
 %-------------------------
-% Rezume, a latex resume template for developers
-% Author : Nanu Panchamurthy
-% Based off of: https://github.com/sb2nov/resume
-% License : MIT
+% Resume in Latex
+% Author : Jake
+% % License : MIT
+%------------------------
 
-% Hope this resume template helps you land an awesome job. If you found this helpful, please consider starring the github repo here, .
-%-------------------------
+\documentclass[letterpaper,11pt]{article}
 
-
-
-%------------PACKAGES----------------
-\documentclass[a4paper,11pt]{article}
-
-\usepackage{verbatim} % reimplements the "verbatim" and "verbatim*" environments
-
-\usepackage{titlesec} % provides an interface to sectioning commands i.e. custom elements
-
-\usepackage{color} % provides both foreground and background color management
-
-\usepackage{enumitem} % provides control over enumerate, itemize and description
-
-\usepackage{fancyhdr} % provides extensive facilities for constructing headers, footers and also controlling their use
-
-\usepackage{tabularx} % defines an environment tabularx, extension of "tabular" with an extra designator x, paragraph like column whose width automatically expands to fill the width of the environment
-
-\usepackage{latexsym} % provides mathematical symbols
-
-\usepackage{marvosym} % provides martin vogel's symbol font which contains various symbols
-
-\usepackage[empty]{fullpage} % sets margins to one inch and removes headers, footers etc..
-
-\usepackage[hidelinks]{hyperref} % removes color and shadow of hyperlinks
-
-\usepackage[normalem]{ulem} % provides "\ul" (uline) command which will break at line breaks
-
-\usepackage[english]{babel} % provides culturally determined typographical rules for wide range of languages
-%-----------------------------------------
-
-\input glyphtounicode % converts glyph names to unicode
-\pdfgentounicode=1 % ensures pdfs generated are ats readable
-
-%----------FONT OPTIONS-------------------
-\usepackage[default]{sourcesanspro} % uses the font source sans pro
-\urlstyle{same} % changes url font from default urlfont to font being used by the document
-%-----------------------------------------
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
 
 
-%----------MARGIN OPTIONS-----------------
-\pagestyle{fancy} % set page style to one configured by fancyhdr
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
-\renewcommand{\headrulewidth}{0in} % sets thickness of linerule under header to zero
-\renewcommand{\footrulewidth}{0in} % sets thickness of linerule over footer to zero
-
-\setlength{\tabcolsep}{0in} % sets thickness of column separator in tables to zero
-
-% origin of the document is one inch from the top and from and the left
-% oddsidemargin and evensidemargin both refer to the left margin
-% right margin is indirectly set using oddsidemargin
+% Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\topmargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
 
-\addtolength{\textwidth}{1.0in} % sets width of text area in the page to one inch
-\addtolength{\textheight}{1.0in} % sets height of text area in the page to one inch
+\urlstyle{same}
 
-\raggedbottom{} % makes all pages the height of current page, no extra vertical space added
-\raggedright{} % makes all pages the width of current page, no extra horizontal space added
-%------------------------------------------
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
 
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-%--------SECTIONING COMMANDS---------
-% \titleformat{<command>}
-%   [<shape>]{<format>}{<label>}{<sep>}
-%     {<before-code>}[<after-code>]
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
 
-% command is the sectioning command to be redefined
-% shape is the style of the font; scshape stands for small caps style
-% format is the format to be applied to whole title- label and text; absent here
-% label defines the label
-% sep is the horizontal separation between label and title body
-% before-code is the code to be executed before
-% after-code is the code to be executed after
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
 
-\titleformat{\section}
-  {\scshape\large}{}
-    {0em}{\color{blue}}[\color{black}\titlerule\vspace{0pt}]
-%-------------------------------------
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
 
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
 
-%--------REDEFINITIONS----------------
-% redefines the style of the bullet point
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-% redefines the underline depth to 2pt
-\renewcommand{\ULdepth}{2pt}
-%-------------------------------------
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-
-%--------CUSTOM COMMANDS--------------
-%\vspace{} defines a vertical space of given size, modifying this in custom commands can help stretch or shrink resume to remove or add content
-
-% resumeItem renders a bullet point
-\newcommand{\resumeItem}[1]{
-  \item\small{#1}
-}
-
-% commands to start and end itemization of resumeItem, rightmargin set to 0.11in to avoid the overflow of resumetItem beyond whatever resumeItemHeading is being used
-\newcommand{\resumeItemListStart}{\begin{itemize}[rightmargin=0.11in]}
-\newcommand{\resumeItemListEnd}{\end{itemize}}
-
-% resumeSectionType renders a bolded type to be used under a section, used as skill type here, middle element is used to keep ":"s in the same vertical line
-\newcommand{\resumeSectionType}[3]{
-  \item\begin{tabular*}{0.96\textwidth}[t]{
-    p{0.12\linewidth}p{0.02\linewidth}p{0.84\linewidth}
-  }
-    \textbf{#1} & #2 & #3
-  \end{tabular*}\vspace{-2pt}
-}
-
-% resumeTrioHeading renders three elements in three columns with second element being italicized and first element bolded, can be used for projects with three elements
-\newcommand{\resumeTrioHeading}[3]{
-  \item\small{
-    \begin{tabular*}{0.96\textwidth}[t]{
-      l@{\extracolsep{\fill}}c@{\extracolsep{\fill}}r
-    }
-      \textbf{#1} & \textit{#2} & #3
-    \end{tabular*}
-  }
-}
-
-% resumeQuadHeading renders four elements in a two columns with the second row being italicized and first element of first row bolded, can be used for experience and projects with four elements
-\newcommand{\resumeQuadHeading}[4]{
-  \item
-  \begin{tabular*}{0.96\textwidth}[t]{l@{\extracolsep{\fill}}r}
-    \textbf{#1} & #2 \\
-    \textit{\small#3} & \textit{\small #4} \\
-  \end{tabular*}
-}
-
-% resumeQuadHeadingChild renders the second row of resumeQuadHeading, can be used for experience if different roles in the same company need to added
-\newcommand{\resumeQuadHeadingChild}[2]{
-  \item
-  \begin{tabular*}{0.96\textwidth}[t]{l@{\extracolsep{\fill}}r}
-    \textbf{\small#1} & {\small#2} \\
-  \end{tabular*}
-}
-
-% commands to start and end itemization of resumeQuadHeading, lefmargin for left indent of 0.15in for resumeItems
-\newcommand{\resumeHeadingListStart}{
-  \begin{itemize}[leftmargin=0.15in, label={}]
-}
-\newcommand{\resumeHeadingListEnd}{\end{itemize}}
 %-------------------------------------------
-
-
-%__________________RESUME____________________
-% You can rearrange sections in any order you may prefer
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-%-----------CONTACT DETAILS------------------
-% Make sure all the details are correct, you can add more links in the first row of second column if needed
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Tom Lonergan} \\ \vspace{1pt}
+    \small +44 7535 870562 $|$ \href{mailto:tomlonergan91@gmail.com}{\underline{tomlonergan91@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/tomlonergan03}{\underline{linkedin.com/in/tomlonergan03}} $|$
+    \href{https://github.com/TomLonergan03}{\underline{github.com/TomLonergan03}}
+\end{center}
 
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\Huge Tom Lonergan\vspace{2pt}} & % row = 1, col = 1
-  Location: Edinburgh, Scotland \\ % row = 1, col = 2
-%  \href{https://jane-doe.com}{\uline{jane-doe.com}} $|$ % row = 2, col = 1
-  \uline{\href{https://www.linkedin.com/in/tomlonergan03/}{LinkedIn/tomlonergan03}} $|$ % row = 2, col = 1
-  \uline{\href{https://github.com/TomLonergan03}{GitHub/TomLonergan03}} %$|$ % row = 2, col = 1
-%  \href{https://leetcode.com/jane-doe}{\uline{Leetcode}} & % row = 2, col = 1
-&
-  Email: \uline{tomlonergan91@gmail.com} $|$ % row = 2, col = 2
-  Mobile: +44 7535 870562 \\ % row = 2, col = 2
-\end{tabular*}
-%--------------------------------------------
+%-----------SUMMARY-----------
+\section{Summary}
+I am a driven and enthusiastic computer science student with a passion for software engineering, especially in the fields of systems programming and operating systems. I enjoy working on new and challenging problems, and have been commended for my ability to quickly pick up new technologies and start contributing to new projects. 
 
-
-%-----------SUMMARY--------------------------
-% Keep this short, simple and straight to point
-
-% \section{Full Stack Developer}
-% \small{
-%  I am a highly skilled web developer with over \textbf{3 years of experience} in \textbf{HTML, CSS, JavaScript, and PHP}. I have knowledge of popular frameworks such as \textbf{React, Angular, and Vue.js} and experience with REST APIs and MVC frameworks.
-% }
-%--------------------------------------------
-
-
-%--------------SKILLS------------------------
-% Add or remove resumeSectionTypes according to your needs
-
-\section{Technical Skills}
-\resumeHeadingListStart{}
-  \resumeSectionType{Languages}{:}{C++, Rust, Python, C, TypeScript, C\#}
-  \resumeSectionType{Linux}{:}{Several years of experience with Linux, primarily Arch}
-  \resumeSectionType{Dev Tools}{:}{CMake, Docker, AWS, Git, GitHub}
-\resumeHeadingListEnd{}
-%--------------------------------------------
-
-
-%-----------EXPERIENCE-----------------------
-% Distill all your talking points to small bullet points which follow the pattern "challenge-action-result" for maximum efficiency. Try to quantify (use numbers) your points whenever possible, highlist words of importance
-
-\section{Experience}
-\resumeHeadingListStart{}
-  \resumeQuadHeading{Software Engineer Intern}{June 2024 -- August 2024}
-  {Microsoft}{Dublin, Ireland}
-    \resumeItemListStart{}
-      \resumeItem{Implemented in product feedback in MySignins}
-      \resumeItem{Created end-to-end tests for Entra MFA configuration in Azure portal}
-    \resumeItemListEnd{}
-  \resumeQuadHeading{Software Engineer Intern}{June 2023 -- Sept 2023}
-  {Nutanix}{Cambridge, England}
-    \resumeItemListStart{}
-      \resumeItem{Worked in the datapath team to replace the library used for backing VM storage}
-      \resumeItem{Developed knowledge of a QEMU and KVM based virtualisation stack}
-    \resumeItemListEnd{}
-  \resumeQuadHeading{Head of Software}{July 2023 -- July 2024}
-  {HYPED --- Edinburgh University Hyperloop Team}{Edinburgh, Scotland}
-    \resumeItemListStart{}
-      \resumeItem{Led a team of 25 people to design and implement a distributed control system for a Hyperloop prototype}
-      \resumeItem{Set standards and oversaw code reviews to maintain code quality}
-    \resumeItemListEnd{}  
-  \resumeQuadHeading{Software Project Manager}{Sept 2021 -- July 2023}
-  {HYPED --- Edinburgh University Hyperloop Team}{Edinburgh, Scotland}
-    \resumeItemListStart{}
-      \resumeItem{Managed a team of 5 people to design, implement, test, and maintain C++ code}
-      \resumeItem{Responsible for controlling logic and communication with motor controllers for Linear Induction Motors}
-    \resumeItemListEnd{}
-\resumeHeadingListEnd{}
-%---------------------------------------------
-
-
-%-----------EDUCATION-------------------------
-% Mention your CGPA, if its good, in the first row of second column
-
+%-----------EDUCATION-----------
 \section{Education}
-  \resumeHeadingListStart{}
-    \resumeQuadHeading{University of Edinburgh}{Sept 2021 -- May 2025}
-    {Computer Science BSc}{Edinburgh, Scotland}
-      \resumeItemListStart{}
-        \resumeItem{Focuses include algorithms, computer systems, networking, and distributed systems}
-        \resumeItem{Predicted First}
-      \resumeItemListEnd{}
-    \resumeQuadHeading{Bell Baxter High School}{August 2015 -- May 2021}
-    {AAAAAA at Highers}{Cupar, Scotland}
-  \resumeHeadingListEnd{}
-%---------------------------------------------
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Edinburgh}{Sept. 2021 -- May 2025}
+      {Bachelor of Science in Computer Science}{Edinburgh, Scotland}
+      \resumeItemListStart
+        \resumeItem{Predicted First Class Honours}
+        \resumeItem{Honours project: "Exploring New Buffer Replacement Policies in Database Systems"}
+        \resumeItem{Focus on operating systems, computer architecture, and networks}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
 
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
 
-% -----------PROJECTS--------------------------
-% Use resumeQuadHeading if four elements are feasible (ex: demo video link), else use resumeTrioHeading. Keep the bullet points simple and concise and try to cover wide variety of skills you have used to build these projects
+    \resumeSubheading
+      {Software Engineer Intern}{June 2024 -- Aug. 2024}
+      {Microsoft}{Dublin, Ireland}
+      \resumeItemListStart
+        \resumeItem{Skills: TypeScript, React, Node.js, C\#}
+        \resumeItem{Implemented in product feedback for MySignins}
+        \resumeItem{Developed end-to-end tests for Azure Portal using Playwright}
+        \resumeItem{Created an internal tool for resolving customer admin lockouts}
+      \resumeItemListEnd
 
-\section{Projects}
-  \resumeHeadingListStart{}
-    \resumeQuadHeading{Instruction Set Architecture Simulator}{}
-    {Rust, Assembly design, Git}{\href{https://github.com/TomLonergan03/isa}{\uline{Source Code}}}
-      \resumeItemListStart{}
-        \resumeItem{Designed a custom 16 bit instruction set}
-        \resumeItem{Implemented a simulator for that instruction set in Rust}
-        % \resumeItem{Created documentation covering key aspects of the ISA}
-      \resumeItemListEnd{}
-    \resumeQuadHeading{Web Scraper}{}{Python, AWS Lambda, DynamoDB}{\href{https://github.com/TomLonergan03/rental-bot}{\uline{Source Code}}}
-      \resumeItemListStart{}
-        \resumeItem{Implemented a web scraper to automate my search for a rental flat in Edinburgh}
-        \resumeItem{Used AWS Lambda for hosting the scraper, backing with a DynamoDB store for past applications}
-      \resumeItemListEnd{}
-  \resumeHeadingListEnd{}
-% --------------------------------------------
+    \resumeSubheading
+      {Head of Software}{July 2023 -- July 2024}
+      {HYPED — University of Edinburgh Hyperloop Team}{Edinburgh, Scotland}
+      \resumeItemListStart
+        \resumeItem{Skills: C++, embedded systems, leadership}
+        \resumeItem{Led a team of 25 student software engineers to design and implement the control system for our Hyperloop prototype}
+        \resumeItem{Collaborated with engineers across the society to ensure software integrated with the rest of the pod}
+        \resumeItem{Created and ran onboarding workshops to teach new members C++, Git, and our workflows}
+      \resumeItemListEnd
 
+    \resumeSubheading
+      {Software Engineer Intern}{June 2023 -- Sept. 2023}
+      {Nutanix}{Cambridge, UK}
+      \resumeItemListStart
+        \resumeItem{Skills: C, Python, QEMU, KVM}
+        \resumeItem{Worked in the datapath team to replace the library used for backing VM storage}
+        \resumeItem{Developed knowledge of QEMU and KVM}
+    \resumeItemListEnd
 
-%----------------OTHERS----------------------
-% You can add your achievements, accolades, certifications etc. here.
+    \resumeSubheading
+      {Software Project Lead}{Sept. 2021 -- July 2023}
+      {HYPED — University of Edinburgh Hyperloop Team}{Edinburgh, Scotland}
+      \resumeItemListStart
+        \resumeItem{Skills: C++, embedded systems, project management}
+        \resumeItem{Led a team of 3 student software engineers to write the code that controls the pod's motors}
+        \resumeItem{Developed a CAN bus library to communicate with the motor controllers}
+    \resumeItemListEnd
 
-% \section{Other Interests}
-%   \resumeItemListStart{}
-%   \resumeItemListEnd{}
-%--------------------------------------------
+  \resumeSubHeadingListEnd
 
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C++, Python, Rust, TypeScript, C, C\#} \\
+     \textbf{Frameworks}{: React, Node.js, Playwright} \\
+     \textbf{Developer Tools}{: Git, Docker, AWS, GitHub, CMake, Neovim} \\
+     \textbf{Technologies}{: Linux, QEMU, KVM} \\
+    }}
+ \end{itemize}
+
+%-------------------------------------------
 \end{document}
