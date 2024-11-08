@@ -1,5 +1,5 @@
 all:
-	pdflatex resume.tex
+	pdflatex "Tom Lonergan CV.tex"
 
 clean:
 	rm -f *.aux *.log *.out *.toc
